@@ -60,6 +60,22 @@ describe('sigin example',()=>{
             return await done();
          })
     })
+
+    test('should fail sign in ---> username already exist',(done)=>{
+        request(app)
+        .post('/user/register')
+        .expect("Content-Type",/json/)
+        .send({
+            username:'test1',
+            password: 'password'
+        })
+        .expect(403)
+        .expect('"Username is already existed"')
+         .end(async(err,res)=>{
+            if(err) return await done(err);
+            return await done();
+         })
+    })
 })
 
 describe('Login example',()=>{
