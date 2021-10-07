@@ -5,7 +5,7 @@ const bodyParser= require('body-parser');
 const app = express();
 
 const jwt = require('jsonwebtoken');
-const e = require('express');
+
 app.use(express.json())
 
 

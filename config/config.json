@@ -9,7 +9,7 @@
   "test": {
     "username": "postgres",
     "password": "Chapto123",
-    "database": "test_sequelize",
+    "database": "test_sequelize1",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },

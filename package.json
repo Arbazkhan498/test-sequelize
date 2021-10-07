@@ -4,7 +4,10 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "jest",
+    "test": "cross-env NODE_ENV=test jest",
+    "pretest": "cross-env NODE_ENV=test npm run db:reset",
+    "db:reset": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all --seeders-path ./seeders/test",
+    "db:create:test": "cross-env NODE_ENV=test npx sequelize-cli db:create",
     "start": "nodemon main.js"
   },
   "keywords": [],
@@ -20,6 +23,7 @@
     "sequelize": "^6.6.5"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "jest": "^27.2.4",
     "nodemon": "^2.0.13",
     "sequelize-cli": "^6.2.0",

@@ -9,8 +9,8 @@ describe('sigin example',()=>{
         await user.destroy({
             truncate:true
         })
-        await sequelize.authenticate();
-        console.log('Database connected!');
+        // await sequelize.authenticate();
+        // console.log('Database connected!');
         
     })
     test('Should Sign in',(done)=>{
